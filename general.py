@@ -50,4 +50,40 @@ def delete_file_contents(path):
         pass
 
 
-# create_project_dir('thenewboston')
+# Read a file and convert each line to a set of items
+def file_to_set(file_name):
+    results = set()
+    with open(file_name, 'rt') as f:
+        for line in f:
+            results.add(line.replace('\n', ''))
+    return results
+
+
+# Iterate through a set, each item will be a new line in the file
+def set_to_file(links, file):
+    # First delete old data, replace with new link data
+    delete_file_contents(file)
+    for link in sorted(links):
+        append_to_file(file, link)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
